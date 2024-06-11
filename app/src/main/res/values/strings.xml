@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">EMS App</string>
+    <string name="add_employee">add_employee</string>
+    <string name="edit" />
+    <string name="delete" />
+</resources>
