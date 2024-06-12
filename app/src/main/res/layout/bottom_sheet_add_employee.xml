@@ -1,48 +1,149 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etFirstName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name" />
+        android:hint="First Name"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
 
-    <EditText
-        android:id="@+id/etLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name" />
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etEmail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email" />
+        android:hint="Last Name"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
 
-    <EditText
-        android:id="@+id/etAddress"
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:layout_marginBottom="8dp"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Address" />
+        android:hint="Email"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
 
-    <EditText
-        android:id="@+id/etSalary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Salary" />
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:layout_marginBottom="8dp"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etDesignation"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Designation" />
+        android:hint="Address"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Salary"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
+
+        <EditText
+            android:id="@+id/etSalary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Designation"
+        android:textColorHint="@color/material_dynamic_neutral80"
+        app:boxCornerRadiusBottomEnd="5pt"
+        app:boxCornerRadiusBottomStart="5pt"
+        app:boxCornerRadiusTopEnd="5pt"
+        app:boxCornerRadiusTopStart="5pt"
+        app:boxStrokeColor="@color/material_dynamic_neutral70"
+        app:hintTextColor="@color/grey"
+        tools:ignore="HardcodedText">
+
+        <EditText
+            android:id="@+id/etDesignation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:layout_marginTop="24dp"
         android:text="Save" />
 </LinearLayout>

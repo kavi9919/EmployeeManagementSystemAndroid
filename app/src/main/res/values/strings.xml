@@ -3,4 +3,7 @@
     <string name="add_employee">add_employee</string>
     <string name="edit" />
     <string name="delete" />
+    <string name="my_image_description" />
+    <string name="delete_employee" />
+    <string name="edit_employee" />
 </resources>

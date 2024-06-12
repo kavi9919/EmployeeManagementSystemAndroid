@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.view.LayoutInflater
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var employeeDatabaseHelper: EmployeeDatabaseHelper
@@ -18,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         employeeDatabaseHelper = EmployeeDatabaseHelper(this)
         recyclerView = findViewById(R.id.recyclerViewEmployees)
         fabAddEmployee = findViewById(R.id.fabAddEmployee)
