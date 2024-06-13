@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class EmployeeAdapter(
@@ -18,9 +19,9 @@ class EmployeeAdapter(
     inner class EmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvEmployeeName: TextView = itemView.findViewById(R.id.tvEmployeeName)
         val tvEmployeeEmail: TextView = itemView.findViewById(R.id.tvEmployeeEmail)
-        val btnViewMore: Button = itemView.findViewById(R.id.btnViewMore)
         val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
         val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
+        val cardView: CardView = itemView.findViewById(R.id.cardView) // Assume the root is CardView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeeViewHolder {
@@ -34,7 +35,8 @@ class EmployeeAdapter(
         holder.tvEmployeeName.text = "${employee.firstName} ${employee.lastName}"
         holder.tvEmployeeEmail.text = employee.email
 
-        holder.btnViewMore.setOnClickListener {
+        // Navigate to EmployeeDetailsActivity on CardView click
+        holder.cardView.setOnClickListener {
             val intent = Intent(context, EmployeeDetailsActivity::class.java).apply {
                 putExtra("FIRST_NAME", employee.firstName)
                 putExtra("LAST_NAME", employee.lastName)
@@ -49,6 +51,7 @@ class EmployeeAdapter(
         holder.btnEdit.setOnClickListener {
             onEditClick(employee)
         }
+
         holder.btnDelete.setOnClickListener {
             onDeleteClick(employee)
         }

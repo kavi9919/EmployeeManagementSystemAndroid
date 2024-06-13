@@ -6,4 +6,8 @@
     <string name="my_image_description" />
     <string name="delete_employee" />
     <string name="edit_employee" />
+    <string name="save">Save</string>
+    <string name="last_name">Last Name</string>
+    <string name="savebtn">Save</string>
+    <string name="address">Address</string>
 </resources>

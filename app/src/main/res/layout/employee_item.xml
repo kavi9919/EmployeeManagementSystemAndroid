@@ -1,12 +1,16 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- employee_item.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:radius="8dp"
-    app:cardElevation="4dp">
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:radius="24dp"
+    app:cardElevation="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,56 +18,16 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Employee Name and Action Buttons Row -->
-        <LinearLayout
+        <!-- Employee Name TextView -->
+        <TextView
+            android:id="@+id/tvEmployeeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <!-- Employee Name TextView -->
-            <TextView
-                android:id="@+id/tvEmployeeName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                tools:text="John Doe" />
-
-            <!-- Action Buttons Container -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <!-- Delete Button -->
-                <ImageButton
-                    android:id="@+id/btnDelete"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="@string/delete_employee"
-                    android:src="@drawable/baseline_delete_24"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:scaleType="centerInside"
-                    app:tint="@color/red"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <!-- Edit Button -->
-                <ImageButton
-                    android:id="@+id/btnEdit"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="@string/edit_employee"
-                    android:src="@drawable/baseline_edit_24"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:scaleType="centerInside"
-                    app:tint="?attr/colorControlNormal"
-                    tools:ignore="SpeakableTextPresentCheck" />
-            </LinearLayout>
-        </LinearLayout>
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="John Doe" />
 
         <!-- Employee Email TextView -->
         <TextView
@@ -74,21 +38,34 @@
             android:textColor="@color/grey"
             tools:text="john.doe@example.com" />
 
-        <!-- View More Button Row -->
+        <!-- Action Buttons Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
             android:orientation="horizontal"
-            android:padding="8dp">
+            android:padding="8dp"
+            tools:ignore="RtlHardcoded">
 
-            <!-- View More Button -->
+            <!-- Edit Button -->
             <Button
-                android:id="@+id/btnViewMore"
+                android:id="@+id/btnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View More"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/green" />
+                android:backgroundTint="@color/black"
+                android:text="Edit"
+                android:textColor="@color/white" />
+
+            <!-- Delete Button -->
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:layout_marginStart="4dp"
+                android:text="Delete"
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

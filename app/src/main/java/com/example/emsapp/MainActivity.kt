@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val etSalary = view.findViewById<android.widget.EditText>(R.id.etSalary)
         val etDesignation = view.findViewById<android.widget.EditText>(R.id.etDesignation)
         val btnSave = view.findViewById<android.widget.Button>(R.id.btnSave)
+        val tvFormTitle = view.findViewById<android.widget.TextView>(R.id.tvFormTitle)
 
         employee?.let {
             etFirstName.setText(it.firstName)
@@ -62,14 +63,38 @@ class MainActivity : AppCompatActivity() {
             etSalary.setText(it.salary.toString())
             etDesignation.setText(it.designation)
         }
-
+        if (employee == null) {
+            tvFormTitle.text  = "Add Employee"
+        } else {
+            tvFormTitle.text = "Edit Employee"
+        }
         btnSave.setOnClickListener {
             val firstName = etFirstName.text.toString()
             val lastName = etLastName.text.toString()
             val email = etEmail.text.toString()
             val address = etAddress.text.toString()
-            val salary = etSalary.text.toString().toDoubleOrNull() ?: 0.0
+            val salaryText = etSalary.text.toString()
             val designation = etDesignation.text.toString()
+
+            // Validate fields
+            if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || address.isEmpty() ||
+                salaryText.isEmpty() || designation.isEmpty()) {
+                Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Validate email
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Validate salary
+            val salary = salaryText.toDoubleOrNull()
+            if (salary == null || salary <= 0) {
+                Toast.makeText(this, "Invalid salary", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             if (employee == null) {
                 val newEmployee = Employee(0, firstName, lastName, email, address, salary, designation)
